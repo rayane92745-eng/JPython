@@ -2,7 +2,7 @@ package com.jpython.lexer;
 
 public class Token {
     public enum Type {
-        NUMBER, PLUS, MINUS, MULTIPLY, DIVIDE, LPAREN, RPAREN, EOF
+        NUMBER, IDENTIFIER, EQUAL, PLUS, MINUS, MULTIPLY, DIVIDE, LPAREN, RPAREN, EOF
     }
 
     public final Type type;
