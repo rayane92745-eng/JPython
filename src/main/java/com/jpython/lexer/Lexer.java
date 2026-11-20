@@ -24,6 +24,15 @@ public class Lexer {
                     sb.append(input.charAt(pos++));
                 }
                 tokens.add(new Token(Token.Type.NUMBER, sb.toString()));
+            } else if (Character.isLetter(current)) {
+                StringBuilder sb = new StringBuilder();
+                while (pos < input.length() && Character.isLetterOrDigit(input.charAt(pos))) {
+                    sb.append(input.charAt(pos++));
+                }
+                tokens.add(new Token(Token.Type.IDENTIFIER, sb.toString()));
+            } else if (current == '=') {
+                tokens.add(new Token(Token.Type.EQUAL, "="));
+                pos++;
             } else if (current == '+') {
                 tokens.add(new Token(Token.Type.PLUS, "+"));
                 pos++;
